@@ -11,6 +11,12 @@
   </head>
 
   <body>
+    <main class="d-flex flex-nowrap" style="min-height: 100vh;">
+    <%= render 'layouts/sidebar' %>
+
+   <div class="flex-grow-1" style="overflow-y: auto;">
     <%= yield %>
+  </div>
+    </main>
   </body>
 </html>
