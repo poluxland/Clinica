@@ -1,0 +1,10 @@
+<p><%= notice %></p>
+
+<%= render @centro %>
+
+<div>
+  <%= link_to "Edit this centro", edit_centro_path(@centro) %> |
+  <%= link_to "Back to centros", centros_path %>
+
+  <%= button_to "Destroy this centro", @centro, method: :delete %>
+</div>

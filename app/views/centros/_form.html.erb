@@ -1,0 +1,45 @@
+<%= form_with(model: centro) do |form| %>
+  <% if centro.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(centro.errors.count, "error") %> prohibited this centro from being saved:</h2>
+
+      <ul>
+        <% centro.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :nombre, style: "display: block" %>
+    <%= form.text_field :nombre, { class: "form-control w-50 text-black" } %>
+  </div>
+
+  <div>
+    <%= form.label :area, style: "display: block" %>
+    <%= form.select :area, ['Audiología', 'Voz en el ciclo vital', 'Infanto-juvenil', 'Adulto y persona mayor'], {}, { class: "form-select w-50 text-black" } %>
+  </div>
+
+  <div>
+    <%= form.label :comuna, style: "display: block" %>
+    <%= form.text_field :comuna, { class: "form-control w-50 text-black" }  %>
+  </div>
+
+ <div>
+  <%= form.label :modalidad, style: "display: block" %>
+  <%= form.select :modalidad, ['Presencial (Centro)', 'UNAB (Activa)', 'Remoto (Centro)'], {}, { class: "form-select w-50 text-black" } %>
+
+</div>
+
+
+  <div>
+    <%= form.label :otros, style: "display: block" %>
+    <%= form.text_area :otros, { class: "form-control w-50 text-black" } %>
+  </div>
+<br>
+  <div>
+    <%= form.submit "Agregar", class: "btn btn-secondary" %>
+
+  </div>
+<% end %>

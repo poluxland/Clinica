@@ -16,8 +16,8 @@
         <aside id="sidebar">
             <div class="h-100">
                 <div class="sidebar-logo">
-                    <a id="nav-title" href="https://facultades.unab.cl/rehabilitacion/" target="_blank">
-                    <%= image_tag("FCR-02.png", alt: "Logo Unab", width: "210", height: "75") %>
+                    <a id="nav-title" href="<%= root_path %>" target="_self">
+                    <%= image_tag("FCR-02.png", alt: "Logo Unab", width: "210", height: "75") %></a>
                 </div>
                 <!-- Sidebar Navigation -->
                 <ul class="sidebar-nav">
@@ -40,7 +40,7 @@
                         </a>
                     </li>
                     <li class="sidebar-item">
-                        <a href="#" class="sidebar-link">
+                        <a href="<%= centros_path %>" class="sidebar-link">
                             <i class="bi bi-building"></i><span> Centros</span>
                         </a>
                     </li>

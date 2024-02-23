@@ -1,0 +1,40 @@
+<p><%= notice %></p>
+
+<h1>Centros</h1>
+
+<table class="table table-striped table-hover">
+  <thead class="table-info">
+    <tr>
+      <th>Nombre</th>
+      <th>Area</th>
+      <th>Comuna</th>
+      <th>Modalidad</th>
+
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @centros.each do |centro| %>
+      <tr>
+        <td><%= centro.nombre %></td>
+        <td><%= centro.area %></td>
+        <td><%= centro.comuna %></td>
+        <td><%= centro.modalidad %></td>
+
+        <td>
+          <%= link_to centro, class: "btn btn-sm btn-primary", title: "Show" do %>
+            <i class="bi bi-eye-fill"></i>
+          <% end %>
+          <%= link_to edit_centro_path(centro), class: "btn btn-sm btn-success", title: "Edit" do %>
+            <i class="bi bi-pencil-fill"></i>
+          <% end %>
+        <%= link_to "", centro_path(centro), data: { turbo_confirm: "¿Estas seguro?", turbo_method: :delete }, method: :delete, class: "btn btn-sm btn-danger bi bi-trash-fill" %>
+
+
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "Nuevo centro", new_centro_path, class: "btn btn-success" %>
