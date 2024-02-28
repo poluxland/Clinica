@@ -1,0 +1,53 @@
+<%= form_with(model: atencion, local: true) do |form| %>
+  <% if atencion.errors.any? %>
+    <div class="alert alert-danger" role="alert">
+      <h4 class="alert-heading"><%= pluralize(atencion.errors.count, "error") %> prohibited this atencion from being saved:</h4>
+      <ul>
+        <% atencion.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :paciente_id %>
+    <%= form.collection_select :paciente_id, Paciente.all, :id, :nombre_completo, {prompt: "Selecione Paciente"}, {class: 'form-select w-50 text-black'} %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :centro_id %>
+    <%= form.collection_select :centro_id, Centro.all, :id, :nombre, {prompt: "Selecione Centro"}, {class: 'form-select w-50 text-black'} %>
+  </div>
+
+  <% if current_user %>
+    <%= form.hidden_field :user_id, value: current_user.id %>
+  <% end %>
+
+  <div class="mU-3">
+    <%= form.label :fecha %>
+    <%= form.date_field :fecha, class: 'form-control w-50 text-black' %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :tutor %>
+    <%= form.text_field :tutor, class: 'form-control w-50 text-black' %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :evolucion %>
+    <%= form.text_area :evolucion, class: 'form-control w-50 text-black' %>
+  </div>
+
+  <!-- Removed the revision_tutor field as it was not in your initial scaffold command.
+       If it's a field you've added later, you can uncomment and adjust the following code:
+  <div class="mb-3">
+    <%= form.label :revision_tutor %>
+    <%= form.text_area :revision_tutor, class: 'form-control w-50 text-black' %>
+  </div>
+  -->
+
+  <div class="mb-3">
+    <%= form.submit class: 'btn btn-primary' %>
+  </div>
+<% end %>

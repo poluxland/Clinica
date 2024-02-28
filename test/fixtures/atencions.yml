@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  paciente: one
+  centro: one
+  user: one
+  fecha: 2024-02-28
+  tutor: MyString
+  evolucion: MyText
+  revision_tutor: MyText
+
+two:
+  paciente: two
+  centro: two
+  user: two
+  fecha: 2024-02-28
+  tutor: MyString
+  evolucion: MyText
+  revision_tutor: MyText

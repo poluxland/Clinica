@@ -1,0 +1,230 @@
+<%= form_with(model: paciente) do |form| %>
+  <% if paciente.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(paciente.errors.count, "error") %> prohibited this paciente from being saved:</h2>
+
+      <ul>
+        <% paciente.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :apellido_paterno, style: "display: block" %>
+    <%= form.text_field :apellido_paterno, class: 'form-control w-50 text-black' %>
+  </div>
+   <div>
+    <%= form.label :apellido_materno, style: "display: block" %>
+    <%= form.text_field :apellido_materno, class: 'form-control w-50 text-black' %>
+  </div>
+   <div>
+     <%= form.label :nombres, "Nombres", class: 'display: block' %>
+    <%= form.text_field :nombre_completo, class: 'form-control w-50 text-black' %>
+  </div>
+
+  <div>
+    <%= form.label :fecha_evaluacion, style: "display: block" %>
+    <%= form.date_field :fecha_evaluacion, class: 'form-control w-50 text-black' %>
+  </div>
+
+  <div>
+    <%= form.label :fecha_diagnostico, style: "display: block" %>
+    <%= form.date_field :fecha_diagnostico, class: 'form-control w-50 text-black' %>
+  </div>
+
+  <div>
+    <%= form.label :fecha_nacimiento, style: "display: block" %>
+    <%= form.date_field :fecha_nacimiento, class: 'form-control w-50 text-black' %>
+  </div>
+
+  <div>
+    <%= form.label :edad, style: "display: block" %>
+    <%= form.number_field :edad, class: 'form-control w-50 text-black' %>
+  </div>
+
+  <div>
+    <%= form.label :direccion, style: "display: block" %>
+    <%= form.text_field :direccion, class: 'form-control w-50 text-black' %>
+  </div>
+
+  <div>
+    <%= form.label :telefono, style: "display: block" %>
+    <%= form.text_field :telefono, class: 'form-control w-50 text-black' %>
+  </div>
+
+  <div>
+    <%= form.label :diagnostico_medico, style: "display: block" %>
+    <%= form.text_field :diagnostico_medico, class: 'form-control w-50 text-black' %>
+  </div>
+
+  <div>
+    <%= form.label :escolaridad, style: "display: block" %>
+    <%= form.text_field :escolaridad, class: 'form-control w-50 text-black' %>
+  </div>
+
+  <div>
+    <%= form.label :nacionalidad, style: "display: block" %>
+    <%= form.text_field :nacionalidad, class: 'form-control w-50 text-black' %>
+  </div>
+
+  <div>
+    <%= form.label :e_civil, style: "display: block" %>
+    <%= form.text_field :e_civil, class: 'form-control w-50 text-black' %>
+  </div>
+
+  <div>
+    <%= form.label :profesion_oficio, style: "display: block" %>
+    <%= form.text_field :profesion_oficio, class: 'form-control w-50 text-black' %>
+  </div>
+
+  <div>
+    <%= form.label :lengua_materna, style: "display: block" %>
+    <%= form.text_field :lengua_materna, class: 'form-control w-50 text-black' %>
+  </div>
+
+  <div>
+    <%= form.label :lateralidad, style: "display: block" %>
+    <%= form.text_field :lateralidad %>
+  </div>
+
+  <div>
+    <%= form.label :nombre_acompanante_parentesco, style: "display: block" %>
+    <%= form.text_field :nombre_acompanante_parentesco, class: 'form-control w-50 text-black' %>
+  </div>
+
+  <div>
+    <%= form.label :n_ficha_clinica, style: "display: block" %>
+    <%= form.text_field :n_ficha_clinica, class: 'form-control w-50 text-black' %>
+  </div>
+
+  <div>
+    <%= form.label :sexo, style: "display: block" %>
+    <%= form.text_field :sexo, class: 'form-control w-50 text-black' %>
+  </div>
+
+  <div>
+    <%= form.label :hta, style: "display: block" %>
+    <%= form.text_field :hta, class: 'form-control w-50 text-black' %>
+  </div>
+
+  <div>
+    <%= form.label :audicion, style: "display: block" %>
+    <%= form.text_field :audicion, class: 'form-control w-50 text-black' %>
+  </div>
+
+  <div>
+    <%= form.label :drogas, style: "display: block" %>
+    <%= form.text_field :drogas, class: 'form-control w-50 text-black' %>
+  </div>
+
+  <div>
+    <%= form.label :farmaco_dependencia, style: "display: block" %>
+    <%= form.text_field :farmaco_dependencia, class: 'form-control w-50 text-black' %>
+  </div>
+
+  <div>
+    <%= form.label :vision, style: "display: block" %>
+    <%= form.text_field :vision, class: 'form-control w-50 text-black' %>
+  </div>
+
+  <div>
+    <%= form.label :cirugias, style: "display: block" %>
+    <%= form.text_field :cirugias, class: 'form-control w-50 text-black' %>
+  </div>
+
+  <div>
+    <%= form.label :tec, style: "display: block" %>
+    <%= form.text_field :tec, class: 'form-control w-50 text-black' %>
+  </div>
+
+  <div>
+    <%= form.label :diabetes, style: "display: block" %>
+    <%= form.text_field :diabetes, class: 'form-control w-50 text-black' %>
+  </div>
+
+  <div>
+    <%= form.label :cond_nutricional, style: "display: block" %>
+    <%= form.text_field :cond_nutricional, class: 'form-control w-50 text-black' %>
+  </div>
+
+  <div>
+    <%= form.label :hipo_hipertiroidismo, style: "display: block" %>
+    <%= form.text_field :hipo_hipertiroidismo, class: 'form-control w-50 text-black' %>
+  </div>
+
+  <div>
+    <%= form.label :acv, style: "display: block" %>
+    <%= form.text_field :acv, class: 'form-control w-50 text-black' %>
+  </div>
+
+  <div>
+    <%= form.label :hospitalizaciones, style: "display: block" %>
+    <%= form.text_field :hospitalizaciones, class: 'form-control w-50 text-black' %>
+  </div>
+
+  <div>
+    <%= form.label :enf_respiratorias, style: "display: block" %>
+    <%= form.text_field :enf_respiratorias, class: 'form-control w-50 text-black' %>
+  </div>
+
+  <div>
+    <%= form.label :tabaquismo, style: "display: block" %>
+    <%= form.text_field :tabaquismo, class: 'form-control w-50 text-black' %>
+  </div>
+
+  <div>
+    <%= form.label :peso, style: "display: block" %>
+    <%= form.text_field :peso, class: 'form-control w-50 text-black' %>
+  </div>
+
+  <div>
+    <%= form.label :cardiopatias, style: "display: block" %>
+    <%= form.text_field :cardiopatias, class: 'form-control w-50 text-black' %>
+  </div>
+
+  <div>
+    <%= form.label :alcohol, style: "display: block" %>
+    <%= form.text_field :alcohol, class: 'form-control w-50 text-black' %>
+  </div>
+
+  <div>
+    <%= form.label :talla, style: "display: block" %>
+    <%= form.text_field :talla, class: 'form-control w-50 text-black' %>
+  </div>
+
+  <div>
+    <%= form.label :tumores_neoplasias, style: "display: block" %>
+    <%= form.text_field :tumores_neoplasias, class: 'form-control w-50 text-black' %>
+  </div>
+
+  <div>
+    <%= form.label :medicamentos, style: "display: block" %>
+    <%= form.text_field :medicamentos, class: 'form-control w-50 text-black' %>
+  </div>
+
+  <div>
+    <%= form.label :dosis, style: "display: block" %>
+    <%= form.text_field :dosis, class: 'form-control w-50 text-black' %>
+  </div>
+
+  <div>
+    <%= form.label :control_consultorio, style: "display: block" %>
+    <%= form.text_field :control_consultorio, class: 'form-control w-50 text-black' %>
+  </div>
+
+  <div>
+    <%= form.label :uso_antidepresivos, style: "display: block" %>
+    <%= form.text_field :uso_antidepresivos, class: 'form-control w-50 text-black' %>
+  </div>
+
+  <div>
+    <%= form.label :resumen_anamnesis, style: "display: block" %>
+    <%= form.text_area :resumen_anamnesis, class: 'form-control w-50 text-black' %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
