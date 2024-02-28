@@ -5,9 +5,9 @@ Rails.application.routes.draw do
   resources :pacientes
   devise_for :users
   resources :centros
- resources :users do
+ resources :users, only: [:index, :edit, :update] do
     collection do
-      get :profesores
+      get :profesores, only: [:index, :edit, :update]
     end
   end
 

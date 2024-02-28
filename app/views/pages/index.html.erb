@@ -6,7 +6,8 @@
       <p>Total de Usuarios: <%= User.count %></p>
     <% end %>
   </div>
-  <%= link_to "Cerrar Sesión", destroy_user_session_path, method: :delete, class: 'btn btn-danger' %>
+  <%= link_to "Sign out", destroy_user_session_path, method: :delete, data: { turbo_method: :delete } %>
+
 <% else %>
   <div class="alert alert-warning w-25" role="alert">
     <p>No has iniciado sesión</p>
