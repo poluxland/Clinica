@@ -10,10 +10,21 @@
     </div>
   <% end %>
 
-  <div class="mb-3">
-    <%= form.label :paciente_id %>
-    <%= form.collection_select :paciente_id, Paciente.all, :id, :nombre_completo, {prompt: "Selecione Paciente"}, {class: 'form-select w-50 text-black'} %>
-  </div>
+
+
+
+<% if params[:paciente_id] %>
+   <%= form.hidden_field :paciente_id, value: params[:paciente_id] %>
+  <%#= form.text_field :dummy_paciente_name, value: "Your desired text here", class: "form-select w-50 text-black", disabled: true %>
+
+
+  <% else %>
+    <div class="mb-3">
+      <%= form.label :paciente_id %>
+      <%= form.collection_select :paciente_id, Paciente.all, :id, :nombre_completo, {prompt: "Seleccionar Paciente"}, {class: 'form-select w-50 text-black'} %>
+    </div>
+  <% end %>
+
 
   <div class="mb-3">
     <%= form.label :centro_id %>

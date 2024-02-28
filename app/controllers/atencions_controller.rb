@@ -13,6 +13,7 @@ class AtencionsController < ApplicationController
   # GET /atencions/new
   def new
     @atencion = Atencion.new
+
   end
 
   # GET /atencions/1/edit
@@ -24,9 +25,10 @@ class AtencionsController < ApplicationController
     @atencion = Atencion.new(atencion_params)
 
 
+
     respond_to do |format|
       if @atencion.save
-        format.html { redirect_to atencion_url(@atencion), notice: "Atencion was successfully created." }
+        format.html { redirect_to atencions_path, notice: "Atencion was successfully created." }
         format.json { render :show, status: :created, location: @atencion }
       else
         format.html { render :new, status: :unprocessable_entity }

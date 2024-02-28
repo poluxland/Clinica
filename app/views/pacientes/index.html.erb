@@ -30,6 +30,7 @@
           <% end %>
 
            <%= link_to "", paciente_path(paciente), data: { turbo_confirm: "¿Estas seguro?", turbo_method: :delete }, method: :delete, class: "btn btn-sm btn-danger bi bi-trash-fill" %>
+           <%= link_to "Nueva Atención", new_atencion_path(paciente_id: paciente.id), class: "btn btn-sm btn-primary", title: "Nueva Atención" %>
         </td>
       </tr>
     <% end %>
