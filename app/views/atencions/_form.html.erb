@@ -40,10 +40,13 @@
     <%= form.date_field :fecha, class: 'form-control w-50 text-black' %>
   </div>
 
+
+
   <div class="mb-3">
     <%= form.label :tutor %>
-    <%= form.text_field :tutor, class: 'form-control w-50 text-black' %>
+    <%= form.collection_select :tutor, User.all, :id, :email, {prompt: "Selecione user"}, {class: 'form-select w-50 text-black'} %>
   </div>
+
 
   <div class="mb-3">
     <%= form.label :evolucion %>

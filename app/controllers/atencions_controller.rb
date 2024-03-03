@@ -23,7 +23,7 @@ class AtencionsController < ApplicationController
   # POST /atencions or /atencions.json
   def create
     @atencion = Atencion.new(atencion_params)
-
+    authorize @atencion
 
 
     respond_to do |format|
