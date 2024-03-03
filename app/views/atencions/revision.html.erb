@@ -1,0 +1,43 @@
+<h1>Lista de Atenciones</h1>
+
+<table class="table table-striped table-hover">
+   <thead class="table-info">
+    <tr>
+      <th>Paciente</th>
+      <th>Centro</th>
+      <th>Alumno</th>
+      <th>Fecha</th>
+
+      <th>Tutor</th>
+      <th>Evolución</th>
+      <th>Revisión docente</th>
+      <th>Acciones</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <% @atencions.each do |atencion| %>
+      <tr>
+        <td><%= atencion.paciente.nombre_completo %></td>
+        <td><%= atencion.centro.nombre %></td>
+        <td><%= atencion.user.apellido_paterno %> <%= atencion.user.apellido_materno %></td>
+        <td><%= atencion.fecha %></td>
+        <td><%= atencion.tutor %></td>
+        <td><%= atencion.evolucion %></td>
+        <td><%= atencion.revision_tutor %></td>
+        <td>
+          <%= link_to atencion, class: "btn btn-primary btn-sm" do %>
+            <i class="bi bi-eye-fill"></i>
+          <% end %>
+          <%= link_to edit_atencion_path(atencion), class: "btn btn-success btn-sm" do %>
+            <i class="bi bi-pencil-fill"></i>
+          <% end %>
+
+           <%#= link_to "", atencion_path(atencion), data: { turbo_confirm: "¿Estas seguro?", turbo_method: :delete }, method: :delete, class: "btn btn-sm btn-danger bi bi-trash-fill" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "Nueva Atención", new_atencion_path, class: "btn btn-primary" %>

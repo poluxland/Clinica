@@ -13,6 +13,7 @@ class CentrosController < ApplicationController
   # GET /centros/new
   def new
     @centro = Centro.new
+    authorize @centro
   end
 
   # GET /centros/1/edit
@@ -22,6 +23,7 @@ class CentrosController < ApplicationController
   # POST /centros or /centros.json
   def create
     @centro = Centro.new(centro_params)
+    authorize @centro
 
     respond_to do |format|
       if @centro.save
@@ -50,6 +52,7 @@ class CentrosController < ApplicationController
   # DELETE /centros/1 or /centros/1.json
   def destroy
     @centro.destroy!
+    authorize @centro
 
     respond_to do |format|
       format.html { redirect_to centros_url, notice: "Centro eliminado." }

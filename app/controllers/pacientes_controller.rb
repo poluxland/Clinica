@@ -13,6 +13,7 @@ class PacientesController < ApplicationController
   # GET /pacientes/new
   def new
     @paciente = Paciente.new
+    authorize @paciente
   end
 
   # GET /pacientes/1/edit
@@ -22,6 +23,7 @@ class PacientesController < ApplicationController
   # POST /pacientes or /pacientes.json
   def create
     @paciente = Paciente.new(paciente_params)
+    authorize @paciente
 
     respond_to do |format|
       if @paciente.save
@@ -50,6 +52,7 @@ class PacientesController < ApplicationController
   # DELETE /pacientes/1 or /pacientes/1.json
   def destroy
     @paciente.destroy!
+    authorize @paciente
 
     respond_to do |format|
       format.html { redirect_to pacientes_url, notice: "Paciente eliminado." }

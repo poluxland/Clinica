@@ -6,6 +6,10 @@ class AtencionsController < ApplicationController
     @atencions = Atencion.all
   end
 
+  def revision
+    @atencions = Atencion.all
+  end
+
   # GET /atencions/1 or /atencions/1.json
   def show
   end
@@ -13,6 +17,7 @@ class AtencionsController < ApplicationController
   # GET /atencions/new
   def new
     @atencion = Atencion.new
+    authorize @atencion
 
   end
 
@@ -53,6 +58,7 @@ class AtencionsController < ApplicationController
   # DELETE /atencions/1 or /atencions/1.json
   def destroy
     @atencion.destroy!
+    authorize @atencion
 
     respond_to do |format|
       format.html { redirect_to atencions_url, notice: "Atencion eliminada." }

@@ -53,13 +53,15 @@
     <%= form.text_area :evolucion, class: 'form-control w-50 text-black' %>
   </div>
 
-  <!-- Removed the revision_tutor field as it was not in your initial scaffold command.
-       If it's a field you've added later, you can uncomment and adjust the following code:
+ <% if current_user.admin? || current_user.profesor? %>
   <div class="mb-3">
     <%= form.label :revision_tutor %>
     <%= form.text_area :revision_tutor, class: 'form-control w-50 text-black' %>
   </div>
-  -->
+<% end %>
+
+
+
 
   <div class="mb-3">
     <%= form.submit class: 'btn btn-primary' %>

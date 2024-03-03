@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
-  resources :atencions
+  resources :pacientes
   get 'users/edit'
   get 'users/update'
-  resources :pacientes
+  resources :atencions do
+    collection do
+      get :revision
+    end
+  end
   devise_for :users
   resources :centros
  resources :users, only: [:index, :edit, :update] do
