@@ -18,7 +18,7 @@ end
 
   def update
     if @user.update(user_params)
-      redirect_to users_path, notice: 'User was successfully updated.'
+      redirect_to users_path, notice: 'Usuario actualizado.'
     else
       render :edit
     end
@@ -36,7 +36,7 @@ end
 
   def require_admin
     unless current_user.admin?
-      redirect_to root_path, alert: 'You are not authorized to perform this action.'
+      redirect_to root_path, alert: 'Usted no esta autorizado para realizar esta acción.'
     end
   end
 end

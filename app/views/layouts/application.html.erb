@@ -22,6 +22,29 @@
                     <a id="nav-title" href="<%= root_path %>" target="_self">
                     <%= image_tag("FCR-02.png", alt: "Logo Unab", width: "210", height: "75") %></a>
                 </div>
+                <div class="sidebar-header">
+
+        <div class="user-info">
+          <% if user_signed_in? %>
+            <span class="user-status">
+              <%= current_user.email %><br>
+              <i class="bi bi-circle-fill text-success"></i>
+              <span>Online</span><br>
+              <span>
+                 <%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete, data: { turbo_method: :delete } %>
+              <% else %>
+                <strong>Usuario</strong><br>
+              </span>
+              <span class="user-status">
+                <i class="bi bi-circle-fill text-danger"></i>
+                <span>Offline</span><br>
+                <span>
+                  <%= link_to "Iniciar sesión", new_user_session_path %>
+                <% end %>
+              </span>
+            </span>
+          </div>
+        </div>
                 <!-- Sidebar Navigation -->
                 <ul class="sidebar-nav">
                     <li class="sidebar-header">Alumnos</li>
