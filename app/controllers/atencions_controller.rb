@@ -6,9 +6,10 @@ class AtencionsController < ApplicationController
     @atencions = Atencion.all
   end
 
-  def revision
-    @atencions = Atencion.all
-  end
+def revision
+  @atencions = Atencion.where(tutor: current_user.email)
+end
+
 
   # GET /atencions/1 or /atencions/1.json
   def show

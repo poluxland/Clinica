@@ -103,7 +103,8 @@
     <%= form.label :sexo, style: "display: block" %>
     <%= form.text_field :sexo, class: 'form-control w-50 text-black' %>
   </div>
-
+<br>
+<h2>Antecedentes morbidos</h2>
   <div>
     <%= form.label :hta, style: "display: block" %>
     <%= form.text_field :hta, class: 'form-control w-50 text-black' %>
@@ -223,8 +224,8 @@
     <%= form.label :resumen_anamnesis, style: "display: block" %>
     <%= form.text_area :resumen_anamnesis, class: 'form-control w-50 text-black' %>
   </div>
-
+<br>
   <div>
-    <%= form.submit %>
+    <%= form.submit "Enviar Datos", class: "btn btn-primary" %>
   </div>
 <% end %>

@@ -40,7 +40,7 @@ class CentrosController < ApplicationController
   def update
     respond_to do |format|
       if @centro.update(centro_params)
-        format.html { redirect_to centro_url(@centro), notice: "Centro actualizado." }
+        format.html { redirect_to centros_path, notice: "Centro actualizado." }
         format.json { render :show, status: :ok, location: @centro }
       else
         format.html { render :edit, status: :unprocessable_entity }

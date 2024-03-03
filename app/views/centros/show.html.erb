@@ -1,10 +1,11 @@
-<p><%= notice %></p>
+
 
 <%= render @centro %>
 
 <div>
-  <%#= link_to "Edit this centro", edit_centro_path(@centro) %> |
-  <%#= link_to "Back to centros", centros_path %>
+  <%#= link_to "Edit this centro", edit_centro_path(@centro) %>
+ <%= link_to "Volver a centros", centros_path, class: "btn btn-secondary" %>
+
 
   <%#= button_to "Destroy this centro", @centro, method: :delete %>
 </div>

@@ -1,27 +1,29 @@
-<div id="<%= dom_id centro %>">
-  <p>
-    <strong>Nombre:</strong>
-    <%= centro.nombre %>
-  </p>
+<div id="<%= dom_id(centro) %>">
+  <table class="table">
 
-  <p>
-    <strong>Area:</strong>
-    <%= centro.area %>
-  </p>
+    <tbody>
+      <tr>
+        <td><strong>Nombre:</strong></td>
+        <td><%= centro.nombre %></td>
+      </tr>
+      <tr>
+        <td><strong>Área:</strong></td>
+        <td><%= centro.area %></td>
+      </tr>
+      <tr>
+        <td><strong>Comuna:</strong></td>
+        <td><%= centro.comuna %></td>
+      </tr>
+      <tr>
+        <td><strong>Modalidad:</strong></td>
+        <td><%= centro.modalidad %></td>
+      </tr>
+      <tr>
+  <td><strong>Otros:</strong></td>
+  <td><%= simple_format(centro.otros) %></td>
+</tr>
 
-  <p>
-    <strong>Comuna:</strong>
-    <%= centro.comuna %>
-  </p>
-
-  <p>
-    <strong>Modalidad:</strong>
-    <%= centro.modalidad %>
-  </p>
-
-  <p>
-    <strong>Otros:</strong>
-    <%= centro.otros %>
-  </p>
-
+    </tbody>
+  </table>
 </div>
+
