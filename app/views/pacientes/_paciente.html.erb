@@ -1,207 +1,153 @@
-<div id="<%= dom_id paciente %>">
-  <p>
-    <strong>Nombre completo:</strong>
-    <%= paciente.nombre_completo %>
-  </p>
+<div class="container" id="<%= dom_id paciente %>">
+  <h2>Anamnesis Fonoaudiológica</h2>
+  <table class="table">
+    <tbody>
+      <thead>
+      <tr>
+        <th colspan="4" class="table-active">Información paciente</th>
+      </tr>
+    </thead>
+      <tr>
+        <th>Nombre completo:</th>
+        <td><%= paciente.apellido_paterno %> <%= paciente.apellido_materno %> <%= paciente.nombre_completo %></td>
+        <th>Fecha Diagnóstico:</th>
+        <td><%= paciente.fecha_diagnostico %></td>
+      </tr>
+      <tr>
+        <th>Fecha evaluación:</th>
+        <td><%= paciente.fecha_evaluacion %></td>
+        <th>Edad:</th>
+        <td><%= paciente.edad %></td>
+      </tr>
+      <tr>
+        <th>Fecha Nacimiento:</th>
+        <td><%= paciente.fecha_nacimiento %></td>
+        <th>Teléfono:</th>
+        <td><%= paciente.telefono %></td>
+      </tr>
+      <tr>
+        <th>Diagnóstico Médico:</th>
+        <td><%= paciente.diagnostico_medico %></td>
+        <th>Dirección:</th>
+        <td><%= paciente.direccion %></td>
+      </tr>
+      <tr>
+        <th>Escolaridad:</th>
+        <td><%= paciente.escolaridad %></td>
+        <th>Nacionalidad:</th>
+        <td><%= paciente.nacionalidad %></td>
+      </tr>
+       <tr>
+        <th>Estado civil:</th>
+        <td><%= paciente.e_civil %></td>
+        <th>Profesion oficio:</th>
+        <td><%= paciente.profesion_oficio %></td>
+      </tr>
+      <tr>
+        <th>Lengua materna:</th>
+        <td><%= paciente.lengua_materna %></td>
+        <th>Lateralidad:</th>
+        <td><%= paciente.lateralidad %></td>
+      </tr>
+      <tr>
+        <th>Nombre acompanante (parentesco):</th>
+        <td><%= paciente.nombre_acompanante_parentesco %></td>
+        <th>N Ficha Clinica:</th>
+        <td><%= paciente.n_ficha_clinica %></td>
+      </tr>
+      <tr>
+        <th>Sexo:</th>
+        <td><%= paciente.sexo %></td>
+        <th>HTA:</th>
+        <td><%= paciente.hta %></td>
+      </tr>
 
-  <p>
-    <strong>Fecha evaluacion:</strong>
-    <%= paciente.fecha_evaluacion %>
-  </p>
+      </tbody>
+    <!-- Insertar encabezado para sección de antecedentes médicos -->
+    <thead>
+      <tr>
+        <th colspan="4" class="table-active">Antecedentes médicos relevantes (Antecedentes Mórbidos)</th>
+      </tr>
+    </thead>
+    <tbody>
 
-  <p>
-    <strong>Fecha diagnostico:</strong>
-    <%= paciente.fecha_diagnostico %>
-  </p>
-
-  <p>
-    <strong>Fecha nacimiento:</strong>
-    <%= paciente.fecha_nacimiento %>
-  </p>
-
-  <p>
-    <strong>Edad:</strong>
-    <%= paciente.edad %>
-  </p>
-
-  <p>
-    <strong>Direccion:</strong>
-    <%= paciente.direccion %>
-  </p>
-
-  <p>
-    <strong>Telefono:</strong>
-    <%= paciente.telefono %>
-  </p>
-
-  <p>
-    <strong>Diagnostico medico:</strong>
-    <%= paciente.diagnostico_medico %>
-  </p>
-
-  <p>
-    <strong>Escolaridad:</strong>
-    <%= paciente.escolaridad %>
-  </p>
-
-  <p>
-    <strong>Nacionalidad:</strong>
-    <%= paciente.nacionalidad %>
-  </p>
-
-  <p>
-    <strong>E civil:</strong>
-    <%= paciente.e_civil %>
-  </p>
-
-  <p>
-    <strong>Profesion oficio:</strong>
-    <%= paciente.profesion_oficio %>
-  </p>
-
-  <p>
-    <strong>Lengua materna:</strong>
-    <%= paciente.lengua_materna %>
-  </p>
-
-  <p>
-    <strong>Lateralidad:</strong>
-    <%= paciente.lateralidad %>
-  </p>
-
-  <p>
-    <strong>Nombre acompanante parentesco:</strong>
-    <%= paciente.nombre_acompanante_parentesco %>
-  </p>
-
-  <p>
-    <strong>N ficha clinica:</strong>
-    <%= paciente.n_ficha_clinica %>
-  </p>
-
-  <p>
-    <strong>Sexo:</strong>
-    <%= paciente.sexo %>
-  </p>
-
-  <p>
-    <strong>Hta:</strong>
-    <%= paciente.hta %>
-  </p>
-
-  <p>
-    <strong>Audicion:</strong>
-    <%= paciente.audicion %>
-  </p>
-
-  <p>
-    <strong>Drogas:</strong>
-    <%= paciente.drogas %>
-  </p>
-
-  <p>
-    <strong>Farmaco dependencia:</strong>
-    <%= paciente.farmaco_dependencia %>
-  </p>
-
-  <p>
-    <strong>Vision:</strong>
-    <%= paciente.vision %>
-  </p>
-
-  <p>
-    <strong>Cirugias:</strong>
-    <%= paciente.cirugias %>
-  </p>
-
-  <p>
-    <strong>Tec:</strong>
-    <%= paciente.tec %>
-  </p>
-
-  <p>
-    <strong>Diabetes:</strong>
-    <%= paciente.diabetes %>
-  </p>
-
-  <p>
-    <strong>Cond nutricional:</strong>
-    <%= paciente.cond_nutricional %>
-  </p>
-
-  <p>
-    <strong>Hipo hipertiroidismo:</strong>
-    <%= paciente.hipo_hipertiroidismo %>
-  </p>
-
-  <p>
-    <strong>Acv:</strong>
-    <%= paciente.acv %>
-  </p>
-
-  <p>
-    <strong>Hospitalizaciones:</strong>
-    <%= paciente.hospitalizaciones %>
-  </p>
-
-  <p>
-    <strong>Enf respiratorias:</strong>
-    <%= paciente.enf_respiratorias %>
-  </p>
-
-  <p>
-    <strong>Tabaquismo:</strong>
-    <%= paciente.tabaquismo %>
-  </p>
-
-  <p>
-    <strong>Peso:</strong>
-    <%= paciente.peso %>
-  </p>
-
-  <p>
-    <strong>Cardiopatias:</strong>
-    <%= paciente.cardiopatias %>
-  </p>
-
-  <p>
-    <strong>Alcohol:</strong>
-    <%= paciente.alcohol %>
-  </p>
-
-  <p>
-    <strong>Talla:</strong>
-    <%= paciente.talla %>
-  </p>
-
-  <p>
-    <strong>Tumores neoplasias:</strong>
-    <%= paciente.tumores_neoplasias %>
-  </p>
-
-  <p>
-    <strong>Medicamentos:</strong>
-    <%= paciente.medicamentos %>
-  </p>
-
-  <p>
-    <strong>Dosis:</strong>
-    <%= paciente.dosis %>
-  </p>
-
-  <p>
-    <strong>Control consultorio:</strong>
-    <%= paciente.control_consultorio %>
-  </p>
-
-  <p>
-    <strong>Uso antidepresivos:</strong>
-    <%= paciente.uso_antidepresivos %>
-  </p>
-
-  <p>
-    <strong>Resumen anamnesis:</strong>
-    <%= paciente.resumen_anamnesis %>
-  </p>
-
+      <tr>
+        <th>Audicion:</th>
+        <td><%= paciente.audicion %></td>
+        <th>DrogasL:</th>
+        <td><%= paciente.drogas %></td>
+      </tr>
+      <tr>
+        <th>Farmaco dependencia:</th>
+        <td><%= paciente.farmaco_dependencia %></td>
+        <th>Vision:</th>
+        <td><%= paciente.vision %></td>
+      </tr>
+      <tr>
+        <th>Cirugias:</th>
+        <td><%= paciente.cirugias %></td>
+        <th>Tec:</th>
+        <td><%= paciente.tec %></td>
+      </tr>
+      <tr>
+        <th>Diabetes:</th>
+        <td><%= paciente.diabetes %></td>
+        <th>Cond. Nutricional:</th>
+        <td><%= paciente.cond_nutricional %></td>
+      </tr>
+      <tr>
+        <th>Hipo hipertiroidismo:</th>
+        <td><%= paciente.hipo_hipertiroidismo %></td>
+        <th>Acv:</th>
+        <td><%= paciente.acv %></td>
+      </tr>
+      <tr>
+        <th>Hospitalizaciones:</th>
+        <td><%= paciente.hospitalizaciones %></td>
+        <th>Enf. respiratorias:</th>
+        <td><%= paciente.enf_respiratorias %></td>
+      </tr>
+       <tr>
+        <th>Tabaquismo:</th>
+        <td><%= paciente.tabaquismo %></td>
+        <th>Peso:</th>
+        <td><%= paciente.peso %></td>
+      </tr>
+      <tr>
+        <th>Cardiopatias:</th>
+        <td><%= paciente.cardiopatias %></td>
+        <th>Alcohol:</th>
+        <td><%= paciente.alcohol %></td>
+      </tr>
+      <tr>
+        <th>Talla:</th>
+        <td><%= paciente.talla %></td>
+        <th>Tumores neoplasias:</th>
+        <td><%= paciente.tumores_neoplasias %></td>
+      </tr>
+      <tr>
+        <th>Medicamentos:</th>
+        <td><%= paciente.medicamentos %></td>
+        <th>Dosis:</th>
+        <td><%= paciente.dosis %></td>
+      </tr>
+      <tr>
+        <th>Control consultorio:</th>
+        <td><%= paciente.control_consultorio %></td>
+        <th>Uso antidepresivos:</th>
+        <td><%= paciente.uso_antidepresivos %></td>
+      </tr>
+      </tbody>
+    <!-- Insertar encabezado para sección de antecedentes médicos -->
+    <thead>
+      <tr>
+        <th colspan="4" class="table-active">Resumen Anamnesis</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td colspan="4"><%= paciente.resumen_anamnesis %><br></td>
+      </tr>
+    </tbody>
+  </table>
 </div>

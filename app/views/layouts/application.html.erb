@@ -24,69 +24,34 @@
                 </div>
                 <!-- Sidebar Navigation -->
                 <ul class="sidebar-nav">
+                    <li class="sidebar-header">Alumnos</li>
 
-                    <li class="sidebar-header">
-                        Alumnos
+                    <li class="sidebar-item">
+                        <a href="<%= pacientes_path %>" class="sidebar-link"><i class="bi bi-file-medical"></i><span> Fichas Medicas</span></a>
                     </li>
                     <li class="sidebar-item">
-                        <a href="<%= centros_path %>" class="sidebar-link">
-                            <i class="bi bi-building"></i><span> Centros</span>
-                        </a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="<%= pacientes_path %>" class="sidebar-link">
-                            <i class="bi bi-file-medical"></i><span> Fichas Medicas</span>
-                        </a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="<%= atencions_path %>" class="sidebar-link">
-                            <i class="bi bi-card-text"></i><span> R. Atenciones</span>
-                        </a>
+                      <a href="<%= atencions_path %>" class="sidebar-link"><i class="bi bi-card-text"></i><span> R. Atenciones</span></a>
                     </li>
 
 
+                    <li class="sidebar-header">Profesores</li>
+                      <li class="sidebar-item">
+                        <a href="<%= centros_path %>" class="sidebar-link"><i class="bi bi-building"></i><span> Centros</span></a>
+                      </li>
 
 
                      <li class="sidebar-item">
-                        <a href="#" class="sidebar-link">
-                            <i class="bi bi-ui-checks-grid"></i><span> Modalidades</span>
-                        </a>
+                      <a href="#" class="sidebar-link"><i class="bi bi-ui-checks-grid"></i><span> Modalidades</span></a>
                     </li>
 
-                                        <li class="sidebar-header">Profesores
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="#" class="sidebar-link collapsed" data-bs-toggle="collapse" data-bs-target="#pages"
-                            aria-expanded="false" aria-controls="pages">
-                            <i class="fa-regular fa-file-lines pe-2"></i>
-                            Pages
-                        </a>
-                        <ul id="pages" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
-                            <li class="sidebar-item">
-                                <a href="#" class="sidebar-link">Analisis</a>
-                            </li>
-                            <li class="sidebar-item">
-                                <a href="#" class="sidebar-link">Cruce</a>
-                            </li>
-                            <li class="sidebar-item">
-                                <a href="#" class="sidebar-link">Otros</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="#" class="sidebar-link collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard"
-                            aria-expanded="false" aria-controls="dashboard">
-                            <i class="fa-solid fa-sliders pe-2"></i>
-                            Dashboard
-                        </a>
-                        <ul id="dashboard" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
-                            <li class="sidebar-item">
-                                <a href="#" class="sidebar-link">Dashboard 1</a>
-                            </li>
-                            <li class="sidebar-item">
-                                <a href="#" class="sidebar-link">Dashboard 2</a>
-                            </li>
-                        </ul>
+                       <li class="sidebar-header">Administrador</li>
+                      <li class="sidebar-item">
+                        <a href="<%= centros_path %>" class="sidebar-link"><i class="bi bi-building"></i><span> Centros</span></a>
+                      </li>
+
+
+                     <li class="sidebar-item">
+                      <a href="#" class="sidebar-link"><i class="bi bi-ui-checks-grid"></i><span> Modalidades</span></a>
                     </li>
 
                     <li class="sidebar-header">
