@@ -58,8 +58,9 @@ end
 
   # DELETE /atencions/1 or /atencions/1.json
   def destroy
-    @atencion.destroy!
     authorize @atencion
+    @atencion.destroy!
+
 
     respond_to do |format|
       format.html { redirect_to atencions_url, notice: "Atencion eliminada." }

@@ -3,8 +3,12 @@ class BitacorasController < ApplicationController
 
   # GET /bitacoras or /bitacoras.json
   def index
-    @bitacoras = Bitacora.all
+  if current_user
+    @bitacoras = Bitacora.where(alumno: current_user.email)
+  else
+    # Manejo si no hay usuario actualmente autenticado
   end
+end
 
   # GET /bitacoras/1 or /bitacoras/1.json
   def show
@@ -13,15 +17,18 @@ class BitacorasController < ApplicationController
   # GET /bitacoras/new
   def new
     @bitacora = Bitacora.new
+    authorize @bitacora
   end
 
   # GET /bitacoras/1/edit
   def edit
+     authorize @bitacora
   end
 
   # POST /bitacoras or /bitacoras.json
   def create
     @bitacora = Bitacora.new(bitacora_params)
+     authorize @bitacora
 
     respond_to do |format|
       if @bitacora.save
@@ -36,6 +43,7 @@ class BitacorasController < ApplicationController
 
   # PATCH/PUT /bitacoras/1 or /bitacoras/1.json
   def update
+     authorize @bitacora
     respond_to do |format|
       if @bitacora.update(bitacora_params)
         format.html { redirect_to bitacora_url(@bitacora), notice: "Bitacora was successfully updated." }
@@ -49,7 +57,9 @@ class BitacorasController < ApplicationController
 
   # DELETE /bitacoras/1 or /bitacoras/1.json
   def destroy
+    authorize @bitacora
     @bitacora.destroy!
+
 
     respond_to do |format|
       format.html { redirect_to bitacoras_url, notice: "Bitacora was successfully destroyed." }

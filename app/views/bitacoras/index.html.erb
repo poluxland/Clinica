@@ -1,14 +1,38 @@
-<p style="color: green"><%= notice %></p>
-
 <h1>Bitacoras</h1>
 
-<div id="bitacoras">
-  <% @bitacoras.each do |bitacora| %>
-    <%= render bitacora %>
-    <p>
-      <%= link_to "Show this bitacora", bitacora %>
-    </p>
-  <% end %>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+
+        <th>Numero Semana</th>
+        <th>Fecha</th>
+        <th>Alumno</th>
+        <th>Profesor</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @bitacoras.each do |bitacora| %>
+        <tr>
+
+          <td><%= bitacora.numero_semana %></td>
+          <td><%= bitacora.fecha %></td>
+          <td><%= bitacora.alumno %></td>
+          <td><%= bitacora.profesor %></td>
+          <td>
+        <%= link_to bitacora, class: "btn btn-primary btn-sm" do %>
+          <i class="bi bi-eye-fill"></i>
+        <% end %>
+        <%= link_to edit_bitacora_path(bitacora), class: "btn btn-success btn-sm" do %>
+          <i class="bi bi-pencil-fill"></i>
+        <% end %>
+        <%= link_to "", bitacora, data: { turbo_confirm: "¿Estás seguro?", turbo_method: :delete }, method: :delete, class: "btn btn-sm btn-danger bi bi-trash-fill" %>
+      </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
 
-<%= link_to "New bitacora", new_bitacora_path %>
+<%= link_to "New bitacora", new_bitacora_path, class: "btn btn-success" %>

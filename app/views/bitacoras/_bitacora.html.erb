@@ -1,32 +1,32 @@
-<div id="<%= dom_id bitacora %>">
-  <p>
-    <strong>Numero semana:</strong>
-    <%= bitacora.numero_semana %>
-  </p>
-
-  <p>
-    <strong>Fecha:</strong>
-    <%= bitacora.fecha %>
-  </p>
-
-  <p>
-    <strong>Alumno:</strong>
-    <%= bitacora.alumno %>
-  </p>
-
-  <p>
-    <strong>Profesor:</strong>
-    <%= bitacora.profesor %>
-  </p>
-
-  <p>
-    <strong>Registro:</strong>
-    <%= bitacora.registro %>
-  </p>
-
-  <p>
-    <strong>Acuerdos:</strong>
-    <%= bitacora.acuerdos %>
-  </p>
-
+<div class="container" id="<%= dom_id bitacora %>">
+  <h2>Bitacora</h2>
+  <table class="table">
+    <tbody>
+      <thead>
+        <tr>
+          <th colspan="4" class="table-active">Información Bitácora</th>
+        </tr>
+      </thead>
+      <tr>
+        <th>Numero semana:</th>
+        <td><%= bitacora.numero_semana %></td>
+        <th>Fecha:</th>
+        <td><%= bitacora.fecha %></td>
+      </tr>
+      <tr>
+        <th>Alumno:</th>
+        <td><%= bitacora.alumno %></td>
+        <th>Profesor:</th>
+        <td><%= bitacora.profesor %></td>
+      </tr>
+      <tr>
+        <th>Registro:</th>
+        <td colspan="3"><%= bitacora.registro %></td>
+      </tr>
+      <tr>
+        <th>Acuerdos:</th>
+        <td colspan="3"><%= bitacora.acuerdos %></td>
+      </tr>
+    </tbody>
+  </table>
 </div>

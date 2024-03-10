@@ -1,10 +1,12 @@
-<p style="color: green"><%= notice %></p>
+
 
 <%= render @bitacora %>
 
 <div>
-  <%= link_to "Edit this bitacora", edit_bitacora_path(@bitacora) %> |
-  <%= link_to "Back to bitacoras", bitacoras_path %>
+  <%= link_to "Editar", edit_bitacora_path(@bitacora), class: "btn btn-primary" %>
+  <%= link_to "Volver a bitacoras", bitacoras_path, class: "btn btn-secondary" %>
 
-  <%= button_to "Destroy this bitacora", @bitacora, method: :delete %>
+
 </div>
+
+

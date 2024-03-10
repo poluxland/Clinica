@@ -51,8 +51,9 @@ class CentrosController < ApplicationController
 
   # DELETE /centros/1 or /centros/1.json
   def destroy
-    @centro.destroy!
     authorize @centro
+    @centro.destroy!
+
 
     respond_to do |format|
       format.html { redirect_to centros_url, notice: "Centro eliminado." }

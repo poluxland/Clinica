@@ -1,8 +1,7 @@
 <%= form_with(model: bitacora) do |form| %>
   <% if bitacora.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(bitacora.errors.count, "error") %> prohibited this bitacora from being saved:</h2>
-
+    <div class="alert alert-danger" role="alert">
+      <h4 class="alert-heading"><%= pluralize(bitacora.errors.count, "error") %> prohibited this bitacora from being saved:</h4>
       <ul>
         <% bitacora.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -11,37 +10,38 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :numero_semana, style: "display: block" %>
-    <%= form.number_field :numero_semana %>
+  <div class="mb-3">
+    <%= form.label :numero_semana %>
+    <%= form.number_field :numero_semana, class: 'form-select w-50 text-black', style: 'display: block' %>
   </div>
 
-  <div>
-    <%= form.label :fecha, style: "display: block" %>
-    <%= form.date_field :fecha %>
+  <div class="mb-3">
+    <%= form.label :fecha %>
+    <%= form.date_field :fecha, class: 'form-select w-50 text-black', style: 'display: block' %>
   </div>
 
-  <div>
-    <%= form.label :alumno, style: "display: block" %>
-    <%= form.text_field :alumno %>
+
+
+<% if current_user %>
+    <%= form.hidden_field :alumno, value: current_user.email %>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :profesor %>
+   <%= form.collection_select :profesor, User.where(role: [1, 2]), :email, :email, {prompt: "Seleccione profesor"}, {class: 'form-select w-50 text-black'} %>
   </div>
 
-  <div>
-    <%= form.label :profesor, style: "display: block" %>
-    <%= form.text_field :profesor %>
+  <div class="mb-3">
+    <%= form.label :registro %>
+    <%= form.text_area :registro, class: 'form-select w-50 text-black', style: 'display: block' %>
   </div>
 
-  <div>
-    <%= form.label :registro, style: "display: block" %>
-    <%= form.text_area :registro %>
+  <div class="mb-3">
+    <%= form.label :acuerdos %>
+    <%= form.text_area :acuerdos, class: 'form-select w-50 text-black', style: 'display: block' %>
   </div>
 
-  <div>
-    <%= form.label :acuerdos, style: "display: block" %>
-    <%= form.text_area :acuerdos %>
-  </div>
-
-  <div>
-    <%= form.submit %>
+  <div class="mb-3">
+    <%= form.submit class: 'btn btn-primary' %>
   </div>
 <% end %>

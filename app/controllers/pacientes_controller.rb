@@ -51,8 +51,9 @@ class PacientesController < ApplicationController
 
   # DELETE /pacientes/1 or /pacientes/1.json
   def destroy
-    @paciente.destroy!
     authorize @paciente
+    @paciente.destroy!
+
 
     respond_to do |format|
       format.html { redirect_to pacientes_url, notice: "Paciente eliminado." }
