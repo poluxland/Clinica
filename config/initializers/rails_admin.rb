@@ -39,4 +39,17 @@ RailsAdmin.config do |config|
     # history_index
     # history_show
   end
+
+
+config.model 'User' do
+    list do
+      field :nombres
+      field :apellido_paterno
+      field :apellido_materno
+      field :role
+      field :email
+      field :telefono
+
+    end
+  end
 end
