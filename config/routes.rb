@@ -9,11 +9,7 @@ Rails.application.routes.draw do
   end
   devise_for :users
   resources :centros
- resources :users, only: [:index, :edit, :update] do
-    collection do
-      get :profesores, only: [:index, :edit, :update]
-    end
-  end
+
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
