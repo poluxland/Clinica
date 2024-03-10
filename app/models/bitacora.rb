@@ -1,0 +1,2 @@
+class Bitacora < ApplicationRecord
+end

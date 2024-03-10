@@ -1,0 +1,47 @@
+<%= form_with(model: bitacora) do |form| %>
+  <% if bitacora.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(bitacora.errors.count, "error") %> prohibited this bitacora from being saved:</h2>
+
+      <ul>
+        <% bitacora.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :numero_semana, style: "display: block" %>
+    <%= form.number_field :numero_semana %>
+  </div>
+
+  <div>
+    <%= form.label :fecha, style: "display: block" %>
+    <%= form.date_field :fecha %>
+  </div>
+
+  <div>
+    <%= form.label :alumno, style: "display: block" %>
+    <%= form.text_field :alumno %>
+  </div>
+
+  <div>
+    <%= form.label :profesor, style: "display: block" %>
+    <%= form.text_field :profesor %>
+  </div>
+
+  <div>
+    <%= form.label :registro, style: "display: block" %>
+    <%= form.text_area :registro %>
+  </div>
+
+  <div>
+    <%= form.label :acuerdos, style: "display: block" %>
+    <%= form.text_area :acuerdos %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

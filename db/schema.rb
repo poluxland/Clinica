@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_02_28_031350) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_10_224528) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -27,6 +27,17 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_28_031350) do
     t.index ["centro_id"], name: "index_atencions_on_centro_id"
     t.index ["paciente_id"], name: "index_atencions_on_paciente_id"
     t.index ["user_id"], name: "index_atencions_on_user_id"
+  end
+
+  create_table "bitacoras", force: :cascade do |t|
+    t.integer "numero_semana"
+    t.date "fecha"
+    t.string "alumno"
+    t.string "profesor"
+    t.text "registro"
+    t.text "acuerdos"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "centros", force: :cascade do |t|

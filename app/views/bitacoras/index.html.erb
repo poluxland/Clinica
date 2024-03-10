@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Bitacoras</h1>
+
+<div id="bitacoras">
+  <% @bitacoras.each do |bitacora| %>
+    <%= render bitacora %>
+    <p>
+      <%= link_to "Show this bitacora", bitacora %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New bitacora", new_bitacora_path %>
