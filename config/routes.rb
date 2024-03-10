@@ -1,13 +1,23 @@
 Rails.application.routes.draw do
-  resources :bitacoras
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+
   resources :pacientes
+
+  resources :bitacoras do
+    collection do
+      get :bit
+    end
+  end
+
   resources :atencions do
     collection do
       get :revision
     end
   end
+
   devise_for :users
+
   resources :centros
 
 

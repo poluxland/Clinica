@@ -10,6 +10,10 @@ class BitacorasController < ApplicationController
   end
 end
 
+  def bit
+    @bitacoras = Bitacora.where(profesor: current_user.email)
+  end
+
   # GET /bitacoras/1 or /bitacoras/1.json
   def show
   end
