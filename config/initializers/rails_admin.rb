@@ -15,6 +15,10 @@ RailsAdmin.config do |config|
   ## == Pundit ==
   # config.authorize_with :pundit
 
+  config.authorize_with do
+    redirect_to main_app.root_path, alert: 'No estás autorizado a realizar esta acción.' unless current_user.admin?
+  end
+
   ## == PaperTrail ==
   # config.audit_with :paper_trail, 'User', 'PaperTrail::Version' # PaperTrail >= 3.0.0
 
