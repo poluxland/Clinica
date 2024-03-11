@@ -16,7 +16,7 @@ class BitacoraPolicy < ApplicationPolicy
   end
 
   def create?
-      user.admin? || user.alumno?
+      user.admin? || user.alumno? || user.profesor?
   end
 
   def update?
