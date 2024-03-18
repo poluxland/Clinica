@@ -45,7 +45,7 @@
  <div class="mb-3">
   <%= form.label :tutor %>
   <%= form.select :tutor,
-        options_for_select(User.where(role: [1, 2]).map { |user| ["#{user.nombres} - #{user.apellido_paterno} - #{user.apellido_materno} ", user.email] }),
+        options_for_select(User.where(role: [1, 2]).map { |user| ["#{user.nombres} #{user.apellido_paterno} #{user.apellido_materno} ", user.email] }),
         { prompt: "Seleccione tutor" },
         { class: 'form-select w-50 text-black' }
   %>
