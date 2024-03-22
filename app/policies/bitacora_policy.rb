@@ -20,7 +20,7 @@ class BitacoraPolicy < ApplicationPolicy
   end
 
   def update?
-    user.admin? || user.profesor?
+    user.admin? || user.profesor? || user.alumno?
   end
 
   def destroy?
