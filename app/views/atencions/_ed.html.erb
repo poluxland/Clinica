@@ -1,0 +1,71 @@
+<%= form_with(model: atencion, local: true) do |form| %>
+  <% if atencion.errors.any? %>
+    <div class="alert alert-danger" role="alert">
+      <h4 class="alert-heading"><%= pluralize(atencion.errors.count, "error") %> prohibited this atencion from being saved:</h4>
+      <ul>
+        <% atencion.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+
+
+<% if params[:paciente_id] %>
+   <%= form.hidden_field :paciente_id, value: params[:paciente_id] %>
+  <%#= form.text_field :dummy_paciente_name, value: "Your desired text here", class: "form-select w-50 text-black", disabled: true %>
+
+
+  <% else %>
+    <div class="mb-3">
+      <%= form.label :paciente_id %>
+      <%= form.collection_select :paciente_id, Paciente.all, :id, :nombre_completo, {prompt: "Seleccionar Paciente"}, {class: 'form-select w-50 text-black'} %>
+    </div>
+  <% end %>
+
+
+  <div class="mb-3">
+    <%= form.label :centro_id %>
+    <%= form.collection_select :centro_id, Centro.all, :id, :nombre, {prompt: "Selecione Centro"}, {class: 'form-select w-50 text-black'} %>
+  </div>
+
+
+
+  <div class="mU-3">
+    <%= form.label :fecha %>
+    <%= form.date_field :fecha, class: 'form-control w-50 text-black' %>
+  </div>
+
+
+
+ <div class="mb-3">
+  <%= form.label :tutor %>
+  <%= form.select :tutor,
+        options_for_select(User.where(role: [1, 2]).map { |user| ["#{user.nombres} #{user.apellido_paterno} #{user.apellido_materno} ", user.email] }),
+        { prompt: "Seleccione tutor" },
+        { class: 'form-select w-50 text-black' }
+  %>
+</div>
+
+
+  <div class="mb-3">
+    <%= form.label :evolucion %>
+    <%= form.text_area :evolucion, class: 'form-control w-50 text-black' %>
+  </div>
+
+ <% if current_user.admin? || current_user.profesor? %>
+  <div class="mb-3">
+    <%= form.label :revision_tutor %>
+    <%= form.text_area :revision_tutor, class: 'form-control w-50 text-black' %>
+  </div>
+<% end %>
+
+
+
+
+  <div class="mb-3">
+    <%= form.submit class: 'btn btn-primary' %>
+  </div>
+<% end %>
