@@ -3,7 +3,13 @@ class AtencionsController < ApplicationController
 
   # GET /atencions or /atencions.json
   def index
-    @atencions = Atencion.all
+    if params[:query].present?
+      query = "%#{params[:query].downcase}%"
+      @atencions = Atencion.joins(:paciente)
+                           .where('LOWER(pacientes.apellido_paterno) LIKE ? OR LOWER(pacientes.apellido_materno) LIKE ?', query, query)
+    else
+      @atencions = Atencion.all
+    end
   end
 
 def revision
