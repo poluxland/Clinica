@@ -8,9 +8,11 @@ class AtencionsController < ApplicationController
       @atencions = Atencion.joins(:paciente)
                            .where('LOWER(pacientes.apellido_paterno) LIKE ? OR LOWER(pacientes.apellido_materno) LIKE ?', query, query)
     else
-      @atencions = Atencion.all
+      @pagy, @atencions = pagy(Atencion.all)
     end
   end
+
+
 
 def revision
   @atencions = Atencion.where(tutor: current_user.email)

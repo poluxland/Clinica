@@ -6,6 +6,9 @@ class ApplicationController < ActionController::Base
 # Opcional: rescata el error Pundit::NotAuthorizedError para manejar los casos de acceso no autorizado
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
+  include Pagy::Backend
+
+
   private
 
   def user_not_authorized

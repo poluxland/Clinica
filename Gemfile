@@ -75,3 +75,4 @@ gem "pundit", "~> 2.3"
 
 gem 'rails_admin'
 gem "sassc-rails"
+gem 'pagy', '~> 9.0' # omit patch digit
