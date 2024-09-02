@@ -5,7 +5,7 @@ class PacientesController < ApplicationController
   def index
     if params[:query].present?
       # Search for the query in apellido_paterno or apellido_materno
-      @pacientes = Paciente.where('apellido_paterno LIKE ? OR apellido_materno LIKE ?', "%#{params[:query]}%", "%#{params[:query]}%")
+      @pacientes = Paciente.where('apellido_paterno ILIKE ? OR apellido_materno ILIKE ?', "%#{params[:query]}%", "%#{params[:query]}%")
     else
       @pacientes = Paciente.all
     end
