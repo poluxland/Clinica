@@ -2,11 +2,13 @@ class AtencionsController < ApplicationController
   before_action :set_atencion, only: %i[ show edit update destroy ]
 
   # GET /atencions or /atencions.json
-  def index
+   def index
     if params[:query].present?
       query = "%#{params[:query].downcase}%"
-      @atencions = Atencion.joins(:paciente)
-                           .where('LOWER(pacientes.apellido_paterno) LIKE ? OR LOWER(pacientes.apellido_materno) LIKE ?', query, query)
+      @pagy, @atencions = pagy(
+        Atencion.joins(:paciente)
+                .where('LOWER(pacientes.apellido_paterno) LIKE ? OR LOWER(pacientes.apellido_materno) LIKE ?', query, query)
+      )
     else
       @pagy, @atencions = pagy(Atencion.all)
     end
