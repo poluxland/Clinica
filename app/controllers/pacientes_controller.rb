@@ -3,7 +3,12 @@ class PacientesController < ApplicationController
 
   # GET /pacientes or /pacientes.json
   def index
-    @pacientes = Paciente.all
+    if params[:query].present?
+      # Search for the query in apellido_paterno or apellido_materno
+      @pacientes = Paciente.where('apellido_paterno LIKE ? OR apellido_materno LIKE ?', "%#{params[:query]}%", "%#{params[:query]}%")
+    else
+      @pacientes = Paciente.all
+    end
   end
 
   # GET /pacientes/1 or /pacientes/1.json
