@@ -7,7 +7,7 @@ class PacientesController < ApplicationController
       # Search for the query in apellido_paterno or apellido_materno
       @pacientes = Paciente.where('apellido_paterno ILIKE ? OR apellido_materno ILIKE ?', "%#{params[:query]}%", "%#{params[:query]}%")
     else
-      @pacientes = Paciente.all
+      @pagy, @pacientes = pagy(Paciente.all)
     end
   end
 
