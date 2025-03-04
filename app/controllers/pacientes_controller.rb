@@ -3,12 +3,13 @@ class PacientesController < ApplicationController
 
   # GET /pacientes or /pacientes.json
   def index
-    if params[:query].present?
-      # Search for the query in apellido_paterno or apellido_materno
-      @pacientes = Paciente.where('apellido_paterno ILIKE ? OR apellido_materno ILIKE ?', "%#{params[:query]}%", "%#{params[:query]}%")
-    else
-      @pagy, @pacientes = pagy(Paciente.all)
-    end
+  if params[:query].present?
+    # Search for the query in apellido_paterno or apellido_materno
+    pacientes = Paciente.where('apellido_paterno ILIKE ? OR apellido_materno ILIKE ?', "%#{params[:query]}%", "%#{params[:query]}%")
+  else
+    pacientes = Paciente.all
+  end
+  @pagy, @pacientes = pagy(pacientes, items: 10) # Ajusta el número de elementos por página
   end
 
   # GET /pacientes/1 or /pacientes/1.json
