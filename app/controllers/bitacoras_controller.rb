@@ -79,6 +79,6 @@ end
 
     # Only allow a list of trusted parameters through.
     def bitacora_params
-      params.require(:bitacora).permit(:numero_semana, :fecha, :alumno, :profesor, :registro, :acuerdos)
+      params.require(:bitacora).permit(:numero_semana, :fecha, :alumno, :profesor, :registro, :acuerdos, :alumno2, :profesor2)
     end
 end

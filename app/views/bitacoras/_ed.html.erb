@@ -22,9 +22,22 @@
 
 
 
+  <!-- Alumno 2 -->
   <div class="mb-3">
-    <%= form.label :profesor %>
-   <%= form.collection_select :profesor, User.where(role: [1, 2]), :email, :email, {prompt: "Seleccione profesor"}, {class: 'form-select w-50 text-black'} %>
+    <%= form.label :alumno2, "Alumno 2" %>
+    <%= form.collection_select :alumno2, User.where(role: 0), :email, :email, { prompt: "Seleccione Alumno 2" }, { class: 'form-select w-50 text-black' } %>
+  </div>
+
+  <!-- Profesor 1 -->
+  <div class="mb-3">
+    <%= form.label :profesor, "Profesor 1" %>
+    <%= form.collection_select :profesor, User.where(role: [1, 2]), :email, :email, { prompt: "Seleccione Profesor 1" }, { class: 'form-select w-50 text-black' } %>
+  </div>
+
+  <!-- Profesor 2 -->
+  <div class="mb-3">
+    <%= form.label :profesor2, "Profesor 2" %>
+    <%= form.collection_select :profesor2, User.where(role: [1, 2]), :email, :email, { prompt: "Seleccione Profesor 2" }, { class: 'form-select w-50 text-black' } %>
   </div>
 
   <div class="mb-3">

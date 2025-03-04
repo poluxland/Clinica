@@ -14,10 +14,16 @@
         <td><%= bitacora.fecha %></td>
       </tr>
       <tr>
-        <th>Alumno:</th>
+        <th>Alumno 1:</th>
         <td><%= bitacora.alumno %></td>
-        <th>Profesor:</th>
+        <th>Profesor 1:</th>
         <td><%= bitacora.profesor %></td>
+      </tr>
+      <tr>
+        <th>Alumno 2:</th>
+        <td><%= bitacora.alumno2.present? ? bitacora.alumno2 : "N/A" %></td>
+        <th>Profesor 2:</th>
+        <td><%= bitacora.profesor2.present? ? bitacora.profesor2 : "N/A" %></td>
       </tr>
       <tr>
         <th>Registro:</th>
